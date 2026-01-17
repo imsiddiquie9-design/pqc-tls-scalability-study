@@ -1,0 +1,36 @@
+{
+  "profile": "CONTINENTAL",
+  "description": "continental-scale wide-area network emulation profile",
+  "network_parameters": {
+    "1": {
+      "rtt_ms": 83.9,
+      "jitter_ms": 2.0,
+      "loss_pct": 0.26
+    },
+    "5": {
+      "rtt_ms": 80.3,
+      "jitter_ms": 4.4,
+      "loss_pct": 0.67
+    },
+    "10": {
+      "rtt_ms": 80.6,
+      "jitter_ms": 5.0,
+      "loss_pct": 0.34
+    },
+    "20": {
+      "rtt_ms": 79.8,
+      "jitter_ms": 5.0,
+      "loss_pct": 0.45
+    },
+    "40": {
+      "rtt_ms": 79.3,
+      "jitter_ms": 4.6,
+      "loss_pct": 0.5
+    }
+  },
+  "sampling_strategy": {
+    "rtt": "sampled-once-per-client",
+    "jitter": "sampled-once-per-client",
+    "loss": "sampled-once-per-client"
+  }
+}

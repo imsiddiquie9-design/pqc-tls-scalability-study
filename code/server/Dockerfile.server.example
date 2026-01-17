@@ -1,0 +1,70 @@
+FROM pqc_base:latest
+
+WORKDIR /opt
+
+# Install dependencies required for building nginx
+RUN apt update && \
+    apt install -y wget gnupg zlib1g-dev libpcre3 libpcre3-dev make gcc iproute2 && \
+    apt clean
+
+# Download nginx source + signature + key
+RUN wget https://nginx.org/download/nginx-1.27.4.tar.gz && \
+    wget https://nginx.org/download/nginx-1.27.4.tar.gz.asc && \
+    wget https://nginx.org/keys/pluknet.key
+
+# Verify nginx source
+RUN gpg --import pluknet.key && \
+    gpg --verify nginx-1.27.4.tar.gz.asc nginx-1.27.4.tar.gz
+
+# Extract nginx
+RUN tar zxf nginx-1.27.4.tar.gz && \
+    cd nginx-1.27.4 && \
+    ./configure \
+    --prefix=/opt \
+    --conf-path=/opt/nginx/nginx.conf \
+    --http-log-path=/var/log/nginx/access.log \
+    --error-log-path=/var/log/nginx/error.log \
+    --lock-path=/var/lock/nginx.lock \
+    --pid-path=/run/nginx.pid \
+    --modules-path=/opt/lib/nginx/modules \
+    --http-client-body-temp-path=/var/lib/nginx/body \
+    --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
+    --http-proxy-temp-path=/var/lib/nginx/proxy \
+    --http-scgi-temp-path=/var/lib/nginx/scgi \
+    --http-uwsgi-temp-path=/var/lib/nginx/uwsgi \
+    --with-compat \
+    --with-debug \
+    --with-http_ssl_module \
+    --with-http_stub_status_module \
+    --with-http_realip_module \
+    --with-http_auth_request_module \
+    --with-http_v2_module \
+    --with-http_dav_module \
+    --with-http_slice_module \
+    --with-threads \
+    --with-http_addition_module \
+    --with-http_gunzip_module \
+    --with-http_gzip_static_module \
+    --with-http_sub_module \
+    --with-pcre \
+    --with-cc-opt="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC -D_FORTIFY_SOURCE=2 -I/opt/include" \
+    --with-ld-opt="-Wl,-z,relro -Wl,-z,now -fPIC -L/opt/lib -Wl,-rpath,/opt/lib" && \
+    make && \
+    make install
+
+
+# Create needed directories
+RUN mkdir -p /var/lib/nginx && \
+    mkdir -p /opt/nginx/conf.d && \
+    mkdir -p /opt/certs && \
+    mkdir -p /var/www/html
+
+# Copy Nginx config from host
+COPY nginx.conf /opt/nginx/nginx.conf
+COPY conf.d/* /opt/nginx/conf.d/
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 443
+

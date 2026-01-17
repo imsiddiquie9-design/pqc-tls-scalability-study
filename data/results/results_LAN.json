@@ -1,0 +1,85 @@
+{
+    "profile": "LAN",
+    "scales": {
+        "1": {
+            "percentiles": {
+                "p50": 7.0,
+                "p90": 8.333,
+                "p95": 9.667,
+                "p99": 14.68,
+                "p999": 60.673
+            },
+            "throughput": {
+                "handshakes_per_sec": 125.0
+            },
+            "outliers": {
+                "above_2x_median": 11.667,
+                "above_3x_median": 5.333
+            }
+        },
+        "5": {
+            "percentiles": {
+                "p50": 12.2,
+                "p90": 17.807,
+                "p95": 21.61,
+                "p99": 42.246,
+                "p999": 103.031
+            },
+            "throughput": {
+                "handshakes_per_sec": 277.78
+            },
+            "outliers": {
+                "above_2x_median": 33.2,
+                "above_3x_median": 12.4
+            }
+        },
+        "10": {
+            "percentiles": {
+                "p50": 18.2,
+                "p90": 29.783,
+                "p95": 39.555,
+                "p99": 95.857,
+                "p999": 159.554
+            },
+            "throughput": {
+                "handshakes_per_sec": 357.416
+            },
+            "outliers": {
+                "above_2x_median": 57.867,
+                "above_3x_median": 25.533
+            }
+        },
+        "20": {
+            "percentiles": {
+                "p50": 39.158,
+                "p90": 85.52,
+                "p95": 122.371,
+                "p99": 237.053,
+                "p999": 509.519
+            },
+            "throughput": {
+                "handshakes_per_sec": 270.045
+            },
+            "outliers": {
+                "above_2x_median": 117.6,
+                "above_3x_median": 54.067
+            }
+        },
+        "40": {
+            "percentiles": {
+                "p50": 88.042,
+                "p90": 205.686,
+                "p95": 275.3,
+                "p99": 429.861,
+                "p999": 606.135
+            },
+            "throughput": {
+                "handshakes_per_sec": 298.331
+            },
+            "outliers": {
+                "above_2x_median": 137.375,
+                "above_3x_median": 56.192
+            }
+        }
+    }
+}

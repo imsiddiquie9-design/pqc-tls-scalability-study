@@ -1,0 +1,45 @@
+services:
+  pqc_server:
+    container_name: pqc_L_N_server
+    build:
+      context: ./server
+      dockerfile: Dockerfile.server
+    image: pqc_server:latest
+    command: ["sh", "/workspace/entrypoint.sh"]
+    ports:
+      - "443:443"
+    cap_add:
+    - NET_ADMIN
+    volumes:
+      - ./server:/workspace
+      - ./server/nginx.conf:/opt/nginx/nginx.conf
+      - ./server/conf.d:/opt/nginx/conf.d
+      - ./server/certs:/opt/certs
+    networks:
+      - oqs_L_N_net
+  pqc_client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.client
+    image: pqc_client:latest
+    environment:
+      CLIENT_NAME: "pqc_client"
+      IS_NETEM: "true"
+      SCALE_SIZE: "1"
+      NUM_OF_HANDSHAKES: "1000"
+      NUM_OF_EXPERIMENTS_REPEATS: "3"
+      NETWORK_PROFILE: "LAN"
+      KEM_GROUP: "X25519MLKEM768"
+    cap_add:
+    - NET_ADMIN
+    command: ["sh", "/workspace/entrypoint.sh"]
+    volumes:
+      - ./client:/workspace
+      - ./client/results:/results
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - oqs_L_N_net
+
+networks:
+  oqs_L_N_net:
+    driver: bridge

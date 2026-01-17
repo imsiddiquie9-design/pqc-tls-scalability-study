@@ -1,0 +1,36 @@
+{
+  "profile": "GLOBAL",
+  "description": "global-scale wide-area network emulation profile",
+  "network_parameters": {
+    "1": {
+      "rtt_ms": 208.8,
+      "jitter_ms": 5.0,
+      "loss_pct": 0.61
+    },
+    "5": {
+      "rtt_ms": 198.7,
+      "jitter_ms": 9.3,
+      "loss_pct": 0.68
+    },
+    "10": {
+      "rtt_ms": 201.7,
+      "jitter_ms": 10.4,
+      "loss_pct": 0.5
+    },
+    "20": {
+      "rtt_ms": 198.8,
+      "jitter_ms": 10.5,
+      "loss_pct": 0.53
+    },
+    "40": {
+      "rtt_ms": 200.5,
+      "jitter_ms": 9.8,
+      "loss_pct": 0.47
+    }
+  },
+  "sampling_strategy": {
+    "rtt": "sampled-once-per-client",
+    "jitter": "sampled-once-per-client",
+    "loss": "sampled-once-per-client"
+  }
+}

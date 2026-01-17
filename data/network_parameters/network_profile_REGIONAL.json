@@ -1,0 +1,36 @@
+{
+  "profile": "REGIONAL",
+  "description": "regional-scale wide-area network emulation profile",
+  "network_parameters": {
+    "1": {
+      "rtt_ms": 36.1,
+      "jitter_ms": 1.0,
+      "loss_pct": 0.21
+    },
+    "5": {
+      "rtt_ms": 35.3,
+      "jitter_ms": 2.2,
+      "loss_pct": 0.3
+    },
+    "10": {
+      "rtt_ms": 34.3,
+      "jitter_ms": 2.5,
+      "loss_pct": 0.27
+    },
+    "20": {
+      "rtt_ms": 34.6,
+      "jitter_ms": 2.5,
+      "loss_pct": 0.26
+    },
+    "40": {
+      "rtt_ms": 34.9,
+      "jitter_ms": 2.3,
+      "loss_pct": 0.26
+    }
+  },
+  "sampling_strategy": {
+    "rtt": "sampled-once-per-client",
+    "jitter": "sampled-once-per-client",
+    "loss": "sampled-once-per-client"
+  }
+}

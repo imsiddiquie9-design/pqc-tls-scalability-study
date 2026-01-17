@@ -1,0 +1,86 @@
+{
+    "profile": "GLOBAL",
+    "scales": {
+        "1": {
+            "percentiles": {
+                "p50": 7.0,
+                "p90": 9.0,
+                "p95": 10.333,
+                "p99": 18.343,
+                "p999": 56.35
+            },
+            "throughput": {
+                "handshakes_per_sec": 111.111
+            },
+            "outliers": {
+                "above_2x_median": 16.667,
+                "above_3x_median": 6.0
+            }
+        },
+        "5": {
+            "percentiles": {
+                "p50": 13.867,
+                "p90": 24.293,
+                "p95": 31.813,
+                "p99": 80.331,
+                "p999": 157.018
+            },
+            "throughput": {
+                "handshakes_per_sec": 269.008
+            },
+            "outliers": {
+                "above_2x_median": 66.2,
+                "above_3x_median": 28.067
+            }
+        },
+        "10": {
+            "percentiles": {
+                "p50": 18.667,
+                "p90": 31.673,
+                "p95": 42.082,
+                "p99": 98.664,
+                "p999": 192.624
+            },
+            "throughput": {
+                "handshakes_per_sec": 341.542
+            },
+            "outliers": {
+                "above_2x_median": 63.733,
+                "above_3x_median": 28.133
+            }
+        },
+        "20": {
+
+            "percentiles": {
+                "p50": 38.483,
+                "p90": 80.548,
+                "p95": 114.054,
+                "p99": 235.978,
+                "p999": 355.514
+            },
+            "throughput": {
+                "handshakes_per_sec": 302.264
+            },
+            "outliers": {
+                "above_2x_median": 107.833,
+                "above_3x_median": 48.467
+            }
+        },
+        "40": {
+            "percentiles": {
+                "p50": 100.571,
+                "p90": 273.313,
+                "p95": 391.567,
+                "p99": 815.249,
+                "p999": 1417.489
+            },
+            "throughput": {
+                "handshakes_per_sec": 258.308
+            },
+            "outliers": {
+                "above_2x_median": 166.842,
+                "above_3x_median": 80.567
+            }
+        }
+    }
+}

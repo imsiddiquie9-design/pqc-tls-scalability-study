@@ -1,0 +1,36 @@
+{
+  "profile": "LAN",
+  "description": "lan-scale wide-area network emulation profile",
+  "network_parameters": {
+    "1": {
+      "rtt_ms": 8.8,
+      "jitter_ms": 0.1,
+      "loss_pct": 0.0
+    },
+    "5": {
+      "rtt_ms": 7.5,
+      "jitter_ms": 0.3,
+      "loss_pct": 0.0
+    },
+    "10": {
+      "rtt_ms": 7.7,
+      "jitter_ms": 0.4,
+      "loss_pct": 0.0
+    },
+    "20": {
+      "rtt_ms": 7.4,
+      "jitter_ms": 0.4,
+      "loss_pct": 0.0
+    },
+    "40": {
+      "rtt_ms": 7.5,
+      "jitter_ms": 0.4,
+      "loss_pct": 0.0
+    }
+  },
+  "sampling_strategy": {
+    "rtt": "sampled-once-per-client",
+    "jitter": "sampled-once-per-client",
+    "loss": "sampled-once-per-client"
+  }
+}

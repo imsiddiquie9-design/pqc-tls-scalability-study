@@ -1,0 +1,14 @@
+FROM pqc_base:latest
+
+WORKDIR /workspace
+
+RUN apt update && \
+    apt install -y \
+        python3 \
+        python3-pip \
+        iproute2 \
+        curl \
+        jq && \
+    apt clean
+
+COPY . /workspace
