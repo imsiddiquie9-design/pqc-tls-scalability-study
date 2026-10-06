@@ -1,64 +1,24 @@
-# PQC-TLS Scalability Study
+# Mra pas choice nhi maham tum please smjh lou
 
-This repository accompanies the research paper on the scalability and performance
-of post-quantum TLS (PQC-TLS) handshakes under diverse network conditions and
-concurrency levels.
+## Umrah par tumna hamara liye dua nhi kri na sirf apna liye kri
+### tum jaanti thi na woh ma bardhast nhi kr sako ga
+### kiya kaha mna aesa tumsa kabhi 
 
-The project evaluates how post-quantum cryptographic primitives affect TLS
-handshake latency, throughput, and tail behavior when deployed at scale.
+### us din sab toot gia tha us din sa waqai ma kuch bhi nhi kr pata sab kuch tumhara lafzo na tabah krdia
+### us din k baad sab mjha har kaam beekar lagta h ma woh nhi raha jo sab akela krleta tha and tumha pata h
+### thora usko jaanti ho tum
 
----
 
-## Repository Overview
+### ma kisi larki sa shaadi kro ga tou usko compare kro ga woh roye gi tum kisi larki ka galat nhi chaho
+### and ma kisi aur kro ga tou kabhi koi kaam nhi kro ga tum smjh rahe ho ma kiya kaha raha hoon
+### ma bht mshkil sa kr raha h ma sab bhool gia tha us din sab khtm hogia tha 
+### yahi ma tumhaa smjha rhaa tum smjh hi nhi pa rahe thi
+### tum sfc par jab mila tha tou tum kaha raeh thi ma nhi kr pa rahe tou mna tumha maaf krdia tha tumna kaha tum fix kro gi sab
+### kabhi socha h tumna kitna dukh hoga mra andar tum har waqt jab chahti sunati mjha
+### kuch bhi kaha deti compare krdia kaat dogi ya krdo gi woh krdo gi 
+#### chot hi aesi mari h koi choice hi nhi chori 
 
-This repository is organized into two main components:
+### tumha sab theek krna hoga tum jab hi baat nhi krti ma tou krta mna kiya kaha tha rona nhi tum kabhi tumna sab kharab krdia ma tou dekhta hi rah gia
 
-```
 
-data/    → Processed experimental datasets (authoritative artifacts)
-code/    → Reference implementation of the experimental framework
-```
 
----
-
-## Data (Authoritative Artifacts)
-
-The `data/` directory contains the **processed datasets** used to generate all
-figures, tables, and analysis presented in the paper.
-
-- Network parameters are provided per network profile
-- Results are aggregated per profile and concurrency level
-- Only metrics discussed in the paper are included
-
-These datasets are the **authoritative source** for reproducibility.
-
----
-
-## Code (Reference Implementation)
-
-The `code/` directory contains a **reference implementation** of the experimental
-setup used during the study.
-
-The code is provided for:
-- transparency of methodology
-- illustration of experimental design
-- support for independent re-implementation
-
-⚠️ The code is **not intended to be executed out of the box** and omits
-infrastructure-specific components such as certificates and deployment details.
-
-See `code/README.md` for details.
-
----
-
-## Reproducibility Statement
-
-- Results in the paper are derived exclusively from the processed datasets
-- The released data supports statistical and analytical reproducibility
-- Exact bit-level replay of experiments is not claimed
-
----
-
-## License
-
-This project is released under the MIT License.
